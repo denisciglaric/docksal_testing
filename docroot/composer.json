@@ -15,13 +15,24 @@
         }
     ],
     "require": {
+        "behat/mink-goutte-driver": "^1.2",
+        "behat/mink-selenium2-driver": "^1.3",
         "composer/installers": "^1.2",
+        "cweagans/composer-patches": "~1.0",
+        "drupal/admin_toolbar": "^2.0",
+        "drupal/bootstrap": "3.x-dev",
+        "drupal/core": "8.8.x-dev",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
-        "drupal/core-vendor-hardening": "^8.8"
+        "drupal/core-vendor-hardening": "^8.8",
+        "drupal/image_effects": "^2.3",
+        "drupal/url_redirect": "^2.61",
+        "symfony/phpunit-bridge": "^5.0"
     },
     "require-dev": {
+        "behat/mink": "^1.7",
+        "phpunit/phpunit": "7.x"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -32,6 +43,11 @@
         "sort-packages": true
     },
     "extra": {
+        "patches": {
+            "drupal/message_subscribe": {
+                "patch": "https://www.drupal.org/files/issues/2020-02-05/account_id_2928789_19_0.patch"
+            }
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./"
