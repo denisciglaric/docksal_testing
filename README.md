@@ -23,19 +23,34 @@ Follow [Docksal environment setup instructions](https://docs.docksal.io/getting-
 1. Clone this repo into your Projects directory
 
     ```
-    git clone https://github.com/docksal/boilerplate-drupal8.git drupal8
+    git clone https://github.com/denisciglaric/docksal_testing.git drupal8
     cd drupal8
     ```
 
 2. Initialize the site
 
-    This will initialize local settings and install the site via drush
+    This will initialize local settings
 
     ```
     fin init
     ```
+   
+3. Unpack `db.sql.gz`
 
-3. Point your browser to
+   This will unpack database
+
+   ```
+   gunzip db.sql.gz
+   ```
+4. Import database
+
+   This will install drupal website
+
+   ```
+   fin db import db.sql.gz
+   ```
+
+5. Point your browser to
 
     ```
     http://drupal8.docksal
@@ -69,3 +84,4 @@ A new value can be generated with `drush ev '$hash = Drupal\Component\Utility\Cr
 
 Before running tests run `fin status` command and copy sql port into `phpunit.xml` -> `<env name="SIMPLETEST_DB" value="mysql://root:root@192.168.64.100:32769/default"/>`
 After that you can run `vendor/bin/phpunit -c phpunit.xml modules_name` from docroot folder. 
+Also rename `<env name="SIMPLETEST_BASE_URL" value="http://drupal8.docksal"/>` to your local domain name.
