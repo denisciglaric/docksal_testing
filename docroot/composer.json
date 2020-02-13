@@ -26,8 +26,6 @@
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/core-vendor-hardening": "^8.8",
-        "drupal/image_effects": "^2.3",
-        "drupal/url_redirect": "^2.61",
         "symfony/phpunit-bridge": "^5.0"
     },
     "require-dev": {
