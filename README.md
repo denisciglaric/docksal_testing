@@ -67,5 +67,5 @@ A new value can be generated with `drush ev '$hash = Drupal\Component\Utility\Cr
 
 ## Running unit tests
 
-Before running tests runn fin status command and copy sql port into phpunit.xml '<env name="SIMPLETEST_DB" value="mysql://root:root@192.168.64.100:32769/default"/>'
+Before running tests run `fin status` command and copy sql port into `phpunit.xml` -> `<env name="SIMPLETEST_DB" value="mysql://root:root@192.168.64.100:32769/default"/>`
 After that you can run `vendor/bin/phpunit -c phpunit.xml modules_name` from docroot folder. 
