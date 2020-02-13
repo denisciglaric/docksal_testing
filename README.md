@@ -63,3 +63,9 @@ Some common tasks that can be handled by the init script (an other [custom comma
 This repo is intended for quick start demos and includes a hardcoded value for `hash_salt` in `settings.php`.  
 If you are basing your project code base on this repo, make sure you regenerate and update the `hash_salt` value.  
 A new value can be generated with `drush ev '$hash = Drupal\Component\Utility\Crypt::randomBytesBase64(55); print $hash . "\n";'` 
+
+
+## Running unit tests
+
+Before running tests runn fin status command and copy sql port into phpunit.xml '<env name="SIMPLETEST_DB" value="mysql://root:root@192.168.64.100:32769/default"/>'
+After that you can run `vendor/bin/phpunit -c phpunit.xml modules_name` from docroot folder. 
